@@ -30,7 +30,7 @@ class Tile {
 
   void show() {
     if (!deathOnImpact || moving) {
-      fill(colour);
+      fill(setColour());
       noStroke();
       rect(pixelPos.x, pixelPos.y, 200, 200);
       if (value < 8) {
@@ -69,9 +69,10 @@ class Tile {
     }
   }
   
-void setColour(){   
+color setColour(){   
     ArrayList listColors = new ArrayList();
     int compteur = 0;
+    int copyValue= value;
     listColors.add(#E4E1DC);
     listColors.add(#EFE7D8);
     listColors.add(#EED0A7);
@@ -81,11 +82,12 @@ void setColour(){
     listColors.add(#EDEB92);
     listColors.add(#E9E775);
     listColors.add(#D9D64C);
-    while (value%2!=1){
+    while (copyValue%2!=1){
       compteur+=1;
-      value=value/2;
+      copyValue=copyValue/2;
     }
-    color colour=(color)listColors.get(compteur);
+    color colour=(color)listColors.get(compteur-1);
+    return colour;
  }
 
 
