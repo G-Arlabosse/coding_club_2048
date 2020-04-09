@@ -34,7 +34,7 @@ class Tile {
       noStroke();
       rect(pixelPos.x, pixelPos.y, 200, 200);
       if (value < 8) {
-        fill(40);
+        fill(100);
       } else {
         fill(240);
       }
@@ -69,24 +69,23 @@ class Tile {
     }
   }
   
-  void setColour() { 
-   
-   ArrayList listColors = new ArrayList();
-   int compteur = 0;
-   listColors.add("white");
-   listColors.add("lightgray");
-   listColors.add("gray");
-   listColors.add("lightorange");
-   listColors.add("orange");
-   listColors.add("red");
-   listColors.add("pink");
-   listColors.add("purple");
-   listColors.add("yellow");
-   while (value%2!=1){
-     compteur+=1;
-     value=value/2;
-   }
-   color colour=(color)listColors.get(compteur);
+void setColour(){   
+    ArrayList listColors = new ArrayList();
+    int compteur = 0;
+    listColors.add(#E4E1DC);
+    listColors.add(#EFE7D8);
+    listColors.add(#EED0A7);
+    listColors.add(#E4AD63);
+    listColors.add(#D5812F);
+    listColors.add(#C14115);
+    listColors.add(#EDEB92);
+    listColors.add(#E9E775);
+    listColors.add(#D9D64C);
+    while (value%2!=1){
+      compteur+=1;
+      value=value/2;
+    }
+    color colour=(color)listColors.get(compteur);
  }
 
 
