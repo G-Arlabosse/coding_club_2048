@@ -40,7 +40,7 @@ class Tile {
       }
       textAlign(CENTER, CENTER);
       textSize(50);
-      text(value = 0, pixelPos.x+100, pixelPos.y+100);
+      text(value, pixelPos.x+100, pixelPos.y+100);
     }
   }
 
@@ -69,9 +69,26 @@ class Tile {
     }
   }
   
-  void setColour() {
+  void setColour() { 
+   
+   ArrayList listColors = new ArrayList();
+   int compteur = 0;
+   listColors.add("white");
+   listColors.add("lightgray");
+   listColors.add("gray");
+   listColors.add("lightorange");
+   listColors.add("orange");
+   listColors.add("red");
+   listColors.add("pink");
+   listColors.add("purple");
+   listColors.add("yellow");
+   while (value%2!=1){
+     compteur+=1;
+     value=value/2;
+   }
+   color colour=(color)listColors.get(compteur);
+ }
 
-  }
 
   Tile clone() {
     Tile clone = new Tile(floor(position.x), floor(position.y));
